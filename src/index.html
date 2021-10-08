@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Finapp - Mobile Template</title>
+    <meta name="description" content="Finapp HTML Mobile Template">
+    <meta name="keywords"
+        content="bootstrap, profile, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/logo-icon.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader bg-primary text-light">
+        <div class="left">
+            <a href="#" class="headerButton" data-bs-toggle="modal" data-bs-target="#sidebarPanel">
+                <ion-icon name="menu-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            <img src="assets/img/logo.png" alt="logo" class="logo">
+        </div>
+        <div class="right">
+            <a href="app-notifications.html" class="headerButton">
+                <ion-icon class="icon" name="notifications-outline"></ion-icon>
+                <span class="badge badge-danger">4</span>
+            </a>
+            <a href="app-settings.html" class="headerButton">
+                <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w32">
+                <span class="badge badge-danger">6</span>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <!-- Profile Card -->
+        <div class="section profile-card-section pt-1">
+            <div class="profile-card">
+                <!-- Balance -->
+                <div class="balance">
+                    <div class="left">
+                        <span class="title">Logged in as:</span>
+                        <h1 class="total">Operator Name</h1>
+                    </div>
+                    <div class="right">
+                        <a href="app-login.html" class="button">
+                            <div class="icon-box">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- * Balance -->
+                <!-- Profile Footer -->
+                <div class="profile-footer">
+                    <div class="item">
+                        <a href="app-sickness-reports.html">
+                            <div class="icon-wrapper">
+                                <ion-icon name="medical-outline"></ion-icon>
+                            </div>
+                            <strong>Sickness Reports</strong>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="app-map.html">
+                            <div class="icon-wrapper bg-success">
+                                <ion-icon name="pin-outline"></ion-icon>
+                            </div>
+                            <strong>Map</strong>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- * Profile Footer -->
+            </div>
+        </div>
+        <!-- Profile Card -->
+
+        <!-- * App Capsule -->
+
+        <div id="weeklyScheduler">
+            <div class="section-heading padding">
+                <h2 class="title"> Events for this week</h2>
+                <span id="weekly-events-number" class="badge badge-danger"></span>
+            </div>
+
+            <div class="section mb-2">
+                <div class="container">
+                    <div class="d-flex flex-column  bd-highlight mb-3">
+                        <!-- Monday -->
+                        <a class="mt-2 rounded border border-primary p-2 weekday" data-bs-toggle="collapse"
+                            href="#collapseMonday" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container bd-highlight text-center ">
+                                Monday
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseMonday">
+                            <div class="card card-body">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                        <!-- Tuesday -->
+                        <a class="mt-2" data-bs-toggle="collapse" href="#collapseTuesday" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container rounded border border-primary p-2 bd-highlight text-center weekday">
+                                Tuesday
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseTuesday">
+                            <div class="card card-body" style="padding: 2px 2px;">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                        <!-- Wednesday -->
+                        <a class="mt-2" data-bs-toggle="collapse" href="#collapseWednesday" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container rounded border border-primary p-2 bd-highlight text-center weekday">
+                                Wednesday 
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseWednesday">
+                            <div class="card card-body">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                        <!-- Thursday -->
+                        <a class="mt-2" data-bs-toggle="collapse" href="#collapseThursday" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container rounded border border-primary p-2 bd-highlight text-center weekday">
+                                Thursday
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseThursday">
+                            <div class="card card-body">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                        <!-- Friday -->
+                        <a class="mt-2" data-bs-toggle="collapse" href="#collapseFriday" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container rounded border border-primary p-2 bd-highlight text-center weekday">
+                                Friday
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseFriday">
+                            <div class="card card-body">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                        <!-- Saturday -->
+                        <a class="mt-2" data-bs-toggle="collapse" href="#collapseSaturday" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container rounded border border-primary p-2 bd-highlight text-center weekday">
+                                Saturday
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseSaturday">
+                            <div class="card card-body">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                        <!-- Sunday -->
+                        <a class="mt-2" data-bs-toggle="collapse" href="#collapseSunday" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <div class="container rounded border border-primary p-2 bd-highlight text-center weekday">
+                                Sunday
+                            </div>
+                        </a>
+                        <div class="collapse mt-1 mb-2 timeline-day" id="collapseSunday">
+                            <div class="card card-body">
+                                <!-- timeline -->
+                                <div class="timeline timed ms-1 me-2 weekday-timeline">
+                                </div>
+                                <!-- * timeline -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * App Capsule -->
+
+        <!-- app footer -->
+        <div class="appFooter">
+            <div class="footer-title">
+                Copyright © Finapp 2021. <br>
+                All Rights Reserved.
+            </div>
+        </div>
+        <!-- * app footer -->
+
+        <!-- App Bottom Menu -->
+        <div class="appBottomMenu">
+            <a href="index.html" class="item active">
+                <div class="col">
+                    <ion-icon name="clipboard-outline"></ion-icon>
+                    <strong>Overview</strong>
+                    <span id="bottom-menu-notif-number" class="badge badge-primary">10</span>
+                </div>
+            </a>
+            <a href="app-calendar.html" class="item">
+                <div class="col">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <strong>Calendar</strong>
+                </div>
+            </a>
+            <a href="app-clients.html" class="item">
+                <div class="col">
+                    <ion-icon name="happy-outline"></ion-icon>
+                    <strong>My Clients</strong>
+                </div>
+            </a>
+            <a href="app-settings.html" class="item">
+                <div class="col">
+                    <ion-icon name="settings-outline"></ion-icon>
+                    <strong>Settings</strong>
+                </div>
+            </a>
+        </div>
+        <!-- * App Bottom Menu -->
+
+        <!-- App Sidebar -->
+        <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <!-- profile box -->
+                        <div class="profileBox pt-2 pb-2">
+                            <div class="image-wrapper">
+                                <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged  w36">
+                            </div>
+                            <div class="in">
+                                <strong>Operator Name</strong>
+                                <div class="text-muted">4029209</div>
+                            </div>
+                            <a href="#" class="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
+                                <ion-icon name="close-outline"></ion-icon>
+                            </a>
+                        </div>
+                        <!-- * profile box -->
+
+                        <!-- action group -->
+                        <div class="action-group">
+                            <a href="#" class="action-button">
+                            </a>
+                            <a href="app-sickness-reports.html" class="action-button">
+                                <div class="in">
+                                    <div class="iconbox">
+                                        <ion-icon name="medical-outline"></ion-icon>
+                                    </div>
+                                    Sickness reports
+                                </div>
+                            </a>
+                            <a href="app-map.html" class="action-button">
+                                <div class="in">
+                                    <div class="iconbox">
+                                        <ion-icon name="pin-outline"></ion-icon>
+                                    </div>
+                                    Map
+                                </div>
+                            </a>
+                            <a href="#" class="action-button">
+                            </a>
+                        </div>
+                        <!-- * action group -->
+
+                        <!-- menu -->
+                        <div class="listview-title mt-1">Menu</div>
+                        <ul class="listview flush transparent no-line image-listview">
+                            <li>
+                                <a href="index.html" class="item">
+                                    <div class="icon-box bg-primary">
+                                        <ion-icon name="clipboard-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        Overview
+                                        <span id="menu-notif-number" class="badge badge-primary">10</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                                <a href="app-calendar.html" class="item">
+                                    <div class="icon-box bg-primary">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        Calendar
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                            </li>
+                        </ul>
+                        <!-- * menu -->
+
+                        <!-- others -->
+                        <div class="listview-title mt-1">Others</div>
+                        <ul class="listview flush transparent no-line image-listview">
+                            <li>
+                                <a href="app-settings.html" class="item">
+                                    <div class="icon-box bg-primary">
+                                        <ion-icon name="settings-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        Settings
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="component-messages.html" class="item">
+                                    <div class="icon-box bg-primary">
+                                        <ion-icon name="chatbubble-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        Support
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="app-login.html" class="item">
+                                    <div class="icon-box bg-primary">
+                                        <ion-icon name="log-out-outline"></ion-icon>
+                                    </div>
+                                    <div class="in">
+                                        Log out
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- * others -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * App Sidebar -->
+
+
+
+        <!-- iOS Add to Home Action Sheet -->
+        <div class="modal inset fade action-sheet ios-add-to-home" id="ios-add-to-home-screen" tabindex="-1"
+            role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add to Home Screen</h5>
+                        <a href="#" class="close-button" data-bs-dismiss="modal">
+                            <ion-icon name="close"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content text-center">
+                            <div class="mb-1"><img src="assets/img/icon/192x192.png" alt="image"
+                                    class="imaged w64 mb-2">
+                            </div>
+                            <div>
+                                Install <strong>Finapp</strong> on your iPhone's home screen.
+                            </div>
+                            <div>
+                                Tap <ion-icon name="share-outline"></ion-icon> and Add to homescreen.
+                            </div>
+                            <div class="mt-2">
+                                <button class="btn btn-primary btn-block" data-bs-dismiss="modal">CLOSE</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * iOS Add to Home Action Sheet -->
+
+
+        <!-- Android Add to Home Action Sheet -->
+        <div class="modal inset fade action-sheet android-add-to-home" id="android-add-to-home-screen" tabindex="-1"
+            role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add to Home Screen</h5>
+                        <a href="#" class="close-button" data-bs-dismiss="modal">
+                            <ion-icon name="close"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="action-sheet-content text-center">
+                            <div class="mb-1">
+                                <img src="assets/img/icon/192x192.png" alt="image" class="imaged w64 mb-2">
+                            </div>
+                            <div>
+                                Install <strong>Finapp</strong> on your Android's home screen.
+                            </div>
+                            <div>
+                                Tap <ion-icon name="ellipsis-vertical"></ion-icon> and Add to homescreen.
+                            </div>
+                            <div class="mt-2">
+                                <button class="btn btn-primary btn-block" data-bs-dismiss="modal">CLOSE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- * Android Add to Home Action Sheet -->
+
+
+
+        <!-- ========= JS Files =========  -->
+        <!-- Bootstrap -->
+        <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+        <!-- Splide -->
+        <script src="assets/js/plugins/splide/splide.min.js"></script>
+        <!-- Base Js File -->
+        <script src="assets/js/base.js"></script>
+        <script src="assets/js/load-events.js"></script>
+
+
+        <script>
+            // Add to Home with 2 seconds delay.
+            AddtoHome("2000", "once");
+            SelectWeekday();
+        </script>
+
+</body>
+
+</html>

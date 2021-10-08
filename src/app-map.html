@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Finapp - Mobile Template</title>
+    <meta name="description" content="Finapp HTML Mobile Template">
+    <meta name="keywords" content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp798Xl7MpbiyFn5bdXAzOd3xNJ1UEv3k"></script>
+    <script>
+        var map;
+        var pos;
+        var waypoints = [];
+        var marker;
+        function initialize() {
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            getPos();
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+            });
+            infoWindow = new google.maps.InfoWindow();
+            directionsRenderer.setMap(map);
+            document.getElementById('clearWaypoints').onclick = function() {clearWaypoints(map)};
+            document.getElementById('addToTrip').onclick = function() {addWaypoint()};
+            document.getElementById('goToOnMap').onclick = function() {calculateAndDisplayRoute(directionsService, directionsRenderer, waypoints, map, i)};
+            document.getElementById("mode").addEventListener("change", () => {
+                calculateAndDisplayRoute(directionsService, directionsRenderer, waypoints, map);
+            });
+        }
+
+        function addWaypoint() {
+            var waypoint = document.getElementById('address').value;
+            waypoints.push({
+                location: waypoint,
+                stopover: true,
+            });
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsRenderer, waypoints, map) {
+            getPos();
+            var geocoder = new google.maps.Geocoder();
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        
+                        const latlng = {
+                            lat: parseFloat(position.coords.latitude),
+                            lng: parseFloat(position.coords.longitude),
+                        };
+                        geocoder.geocode({ location: latlng }).then((response) => {
+                            if (response.results[0]) {
+                                var posAddress = response.results[0].formatted_address;
+                                var start = posAddress;
+                                var end = document.getElementById('address').value;
+                                var selectedMode = document.getElementById('mode').value;
+                                directionsService.route({
+                                    origin: {
+                                        query: start,
+                                    },
+                                    destination: {
+                                        query: end,
+                                    },
+                                    waypoints: waypoints,
+                                    optimizeWaypoints: true,
+                                    travelMode: google.maps.TravelMode[selectedMode],
+                                })
+                                .then((response) => {
+                                    directionsRenderer.setDirections(response);
+                                })
+                                .catch((e) => window.alert("Directions request failed due to " + status));
+                            } else {
+                                window.alert("No results found");
+                            }
+                        })
+                        .catch((e) => window.alert("Geocoder failed due to: " + e));
+                    },
+                    () => {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    }
+                );
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function clearWaypoints(map) {
+            waypoints = [];
+        }
+
+        function getPos() {
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude,
+                        };
+
+                        if(marker != null)
+                        {
+                            marker = null;
+                        }
+                        infoWindow.setPosition(pos);
+                        marker = new google.maps.Marker({
+                            position: pos,
+                            title: 'Your Location',
+                            map: map
+                        });
+                        map.setCenter(pos);
+                    },
+                    () => {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    }
+                );
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        };
+
+        function errorFunction(position) 
+        {
+            alert('Error!');
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(
+                browserHasGeolocation
+                ? "Error: The Geolocation service failed."
+                : "Error: Your browser doesn't support geolocation."
+            );
+            infoWindow.open(map);
+        }
+    </script>
+</head>
+
+<body onload="initialize()">
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/logo-icon.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            Map
+        </div>
+        <div class="right">
+            <a href="app-notifications.html" class="headerButton">
+                <ion-icon class="icon" name="notifications-outline"></ion-icon>
+                <span class="badge badge-danger">4</span>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule" class="full-height">
+        <div class="section">
+            <div class="listed-detail mt-3">
+                <div class="icon-wrapper">
+                    <div class="iconbox bg-success">
+                        <ion-icon name="pin-outline"></ion-icon>
+                    </div>
+                </div>
+                <h3 class="text-center mt-2">Destination</h3>
+            </div>
+            <div class="form-group basic">
+                    <div class="form-group basic">
+                        <label class="label" for="userid1">Your destination</label>
+                        <input type="text" class="form-control" placeholder="Enter your destination"
+                            id="address" name="address">
+                    </div>
+            </div>
+            <button type="button" id="clearWaypoints" class="block-button-2">Clear waypoints</button>
+            <button type="button" id="addToTrip" class="block-button-1">Add to trip</button>
+            <button type="button" id="goToOnMap" class="block-button">Find my destination</button>
+            <div id="floating-panel">
+                <b>Mode of Travel: </b>
+                <select id="mode">
+                  <option value="DRIVING">Driving</option>
+                  <option value="WALKING">Walking</option>
+                  <option value="BICYCLING">Bicycling</option>
+                  <option value="TRANSIT">Transit</option>
+                </select>
+            </div>
+            <div id="map" style="width: 80vw; height: 70vh; margin-bottom: 10vh; margin-left: 10vw; margin-top: 10vh; margin-right: 10vw;"></div>
+        </div>
+    </div>
+    <!-- * App Capsule -->
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+                <ion-icon name="clipboard-outline"></ion-icon>
+                <strong>Overview</strong>
+                <span class="badge badge-primary">10</span>
+            </div>
+        </a>
+        <a href="app-calendar.html" class="item">
+            <div class="col">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <strong>Calendar</strong>
+            </div>
+        </a>
+        <a href="app-clients.html" class="item">
+            <div class="col">
+                <ion-icon name="happy-outline"></ion-icon>
+                <strong>My Clients</strong>
+            </div>
+        </a>
+        <a href="app-settings.html" class="item">
+            <div class="col">
+                <ion-icon name="settings-outline"></ion-icon>
+                <strong>Settings</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+
+</body>
+
+</html>

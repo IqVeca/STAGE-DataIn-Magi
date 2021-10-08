@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Finapp - Mobile Template</title>
+    <meta name="description" content="Finapp HTML Mobile Template">
+    <meta name="keywords"
+        content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="assets/img/logo-icon.png" alt="icon" class="loading-icon">
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            Settings
+        </div>
+        <div class="right">
+            <a href="app-notifications.html" class="headerButton">
+                <ion-icon class="icon" name="notifications-outline"></ion-icon>
+                <span class="badge badge-danger">4</span>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section mt-3 text-center">
+            <div class="avatar-section">
+                <a href="#">
+                    <img src="assets/img/sample/avatar/avatar1.jpg" alt="avatar" class="imaged w100 rounded">
+                    <span class="button">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="listview-title mt-1">Theme</div>
+        <ul class="listview image-listview text inset">
+            <li>
+                <div class="item">
+                    <div class="in">
+                        <div>
+                            Dark Mode
+                        </div>
+                        <div class="form-check form-switch  ms-2">
+                            <input class="form-check-input dark-mode-switch" type="checkbox" id="darkmodeSwitch">
+                            <label class="form-check-label" for="darkmodeSwitch"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="listview-title mt-1">Notifications</div>
+        <ul class="listview image-listview text inset">
+            <li>
+                <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#soundActionSheet">
+                    <div class="in">
+                        <div>Notification Sound</div>
+                    </div>
+                </a>
+            </li>
+            <!-- Email Action Sheet -->
+            <div class="modal fade action-sheet" id="soundActionSheet" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Update Sound Notification</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="action-sheet-content">
+                                <form>
+                                    <div class="form-group basic">
+                                        <div class="input-wrapper p-3">
+                                            <label class="label w-100" for="select4">Select Sound</label>
+                                            <select class="form-control custom-select w-100" id="select4">
+                                                <option value="1">Beep</option>
+                                                <option value="2">Whistle</option>
+                                                <option value="3">Ding</option>
+                                                <option value="4">Tic</option>
+                                            </select>
+                                        </div>
+                                        <button type="button" class="btn btn-primary btn-block btn-lg"
+                                            data-bs-dismiss="modal">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- * Email Action Sheet -->
+        </ul>
+
+        <div class="listview-title mt-1">Profile Settings</div>
+        <ul class="listview image-listview text inset">
+            <li>
+                <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#emailActionSheet">
+                    <div class="in">
+                        <div>Update E-mail</div>
+                    </div>
+                </a>
+            </li>
+            <!-- Email Action Sheet -->
+            <div class="modal fade action-sheet" id="emailActionSheet" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Update email</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="action-sheet-content">
+                                <form>
+                                    <div class="form-group basic">
+                                        <div class="input-wrapper">
+                                            <label class="label" for="text11d">New Email</label>
+                                            <input type="email" class="form-control" id="text11d"
+                                                placeholder="Enter new Email">
+                                            <i class="clear-input">
+                                                <ion-icon name="close-circle"></ion-icon>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group basic">
+                                        <button type="button" class="btn btn-primary btn-block btn-lg"
+                                            data-bs-dismiss="modal">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- * Email Action Sheet -->
+            <li>
+                <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#numberActionSheet">
+                    <div class="in">
+                        <div>Update Phone Number</div>
+                    </div>
+                </a>
+            </li>
+            <!-- Number Action Sheet -->
+            <div class="modal fade action-sheet" id="numberActionSheet" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Update Phone Number</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="action-sheet-content">
+                                <form>
+                                    <div class="form-group basic">
+                                        <div class="input-wrapper">
+                                            <label class="label" for="text11d">New Number</label>
+                                            <input type="text" class="form-control" id="text11d"
+                                                placeholder="Enter new number">
+                                            <i class="clear-input">
+                                                <ion-icon name="close-circle"></ion-icon>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group basic">
+                                        <button type="button" class="btn btn-primary btn-block btn-lg"
+                                            data-bs-dismiss="modal">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- * Number Action Sheet -->
+        </ul>
+
+        <div class="listview-title mt-1">Security</div>
+        <ul class="listview image-listview text mb-2 inset">
+            <li>
+                <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#passwordActionSheet">
+                    <div class="in">
+                        <div>Update Password</div>
+                    </div>
+                </a>
+            </li>
+            <!-- Password Action Sheet -->
+            <div class="modal fade action-sheet" id="passwordActionSheet" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Update Password</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="action-sheet-content">
+                                <form>
+                                    <div class="form-group basic">
+                                        <div class="input-wrapper">
+                                            <label class="label" for="text11d">Old Password</label>
+                                            <input type="password" class="form-control" id="text11d"
+                                                placeholder="Enter old password">
+                                            <i class="clear-input">
+                                                <ion-icon name="close-circle"></ion-icon>
+                                            </i>
+                                        </div>
+                                        <div class="input-wrapper pt-1">
+                                            <label class="label" for="text11d">New Password</label>
+                                            <input type="password" class="form-control" id="text11d"
+                                                placeholder="Enter new password">
+                                            <i class="clear-input">
+                                                <ion-icon name="close-circle"></ion-icon>
+                                            </i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group basic">
+                                        <button type="button" class="btn btn-primary btn-block btn-lg"
+                                            data-bs-dismiss="modal">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- * Password Action Sheet -->
+            <li>
+                <div class="item">
+                    <div class="in">
+                        <div>
+                            2 Step Verification
+                        </div>
+                        <div class="form-check form-switch ms-2">
+                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault3" checked />
+                            <label class="form-check-label" for="SwitchCheckDefault3"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Log out all devices</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.datain.it/" class="item">
+                    <div class="in">
+                        <div>Help Center</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+    <!-- * App Capsule -->
+
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+                <ion-icon name="clipboard-outline"></ion-icon>
+                <strong>Overview</strong>
+                <span class="badge badge-primary">10</span>
+            </div>
+        </a>
+        <a href="app-calendar.html" class="item">
+            <div class="col">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <strong>Calendar</strong>
+            </div>
+        </a>
+        <a href="app-clients.html" class="item">
+            <div class="col">
+                <ion-icon name="happy-outline"></ion-icon>
+                <strong>My Clients</strong>
+            </div>
+        </a>
+        <a href="app-settings.html" class="item active">
+            <div class="col">
+                <ion-icon name="settings-outline"></ion-icon>
+                <strong>Settings</strong>
+            </div>
+        </a>
+    </div>
+    <!-- * App Bottom Menu -->
+
+    <!-- ========= JS Files =========  -->
+    <!-- Bootstrap -->
+    <script src="assets/js/lib/bootstrap.bundle.min.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="assets/js/plugins/splide/splide.min.js"></script>
+    <!-- Base Js File -->
+    <script src="assets/js/base.js"></script>
+
+
+</body>
+
+</html>
